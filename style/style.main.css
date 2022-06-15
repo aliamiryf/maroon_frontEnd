@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "main";
+  src: url("../assets/fonts/Vazir-Medium-FD-WOL.ttf");
+}
+@font-face {
+  font-family: "black";
+  src: url("../assets/fonts/Estedad-Black.ttf");
+}
+@media (min-width: 200px) and (max-width: 500px) {
+  .container{
+    width: 100% !important;
+  }
+}
+@media  (min-width: 800px) and (max-width: 1770px){
+  .container{
+    width: 80% !important;
+  }
+}
+@media  (min-width: 1800px) and (max-width: 2500px){
+  .container{
+    width: 60% !important;
+  }
+}
+body{
+  /*overflow-x: hidden;*/
+}
+*{
+  font-family: main;
+  letter-spacing: 0px;
+}
+.bold-font{
+  font-family: black !important;
+}
+.mainShadow{
+  box-shadow: 0 10px 15px 0 rgb(241 59 59 / 20%) !important;
+}
+.brandName{
+  color: #f13b3b;
+  font-family: black !important;
+}
+.line{
+  width: 100px;
+  height: 2px;
+  background: #f13b3b;
+  border-radius: 10px;
+}
+.shadow-wrapper{
+  box-shadow: 0px 20px 40px rgb(24 44 74 / 5%) !important;
+}
