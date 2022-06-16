@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import ShortDescSidebar from "@/components/sidebar/indexes/components/shortDescSidebar";
-import BestChannelSidebar from "@/components/sidebar/indexes/components/bestChannelSidebar";
+import ShortDescSidebar from "@/components/sidebar/indexes/components/index/shortDescSidebar";
+import BestChannelSidebar from "@/components/sidebar/indexes/components/index/bestChannelSidebar";
 import SingleAdsTextOnPic from "@/components/main/ADS/singleAdsTextOnPic";
-import PopularTagsSidebar from "@/components/sidebar/indexes/components/popularTagsSidebar";
-import RecentlySavedSidebar from "@/components/sidebar/indexes/components/recentlySavedSidebar";
+import PopularTagsSidebar from "@/components/sidebar/indexes/components/index/popularTagsSidebar";
+import RecentlySavedSidebar from "@/components/sidebar/indexes/components/index/recentlySavedSidebar";
 export default {
   components: {RecentlySavedSidebar, PopularTagsSidebar, SingleAdsTextOnPic, BestChannelSidebar, ShortDescSidebar}
 }

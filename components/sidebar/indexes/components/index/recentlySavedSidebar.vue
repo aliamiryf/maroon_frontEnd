@@ -9,7 +9,7 @@
           <v-row >
             <v-col cols="1">
               <v-avatar size="30">
-                <img src="../../../../assets/pic/demo.jpeg" alt="">
+                <img src="../../../../../assets/pic/demo.jpeg" alt="">
               </v-avatar>
             </v-col>
             <v-col cols="11">

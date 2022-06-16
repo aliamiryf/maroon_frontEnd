@@ -16,7 +16,7 @@
         شروع نوشتن
         <v-icon class="mr-1" small>mdi-pencil</v-icon>
       </v-btn>
-    </div>
+    </div>w
   </div>
 </template>
 
