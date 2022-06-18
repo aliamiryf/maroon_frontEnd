@@ -1,6 +1,6 @@
 <template>
   <div  class="shadow-wrapper singleBox">
-    <div class="imageArea">
+    <div class="imageArea" :style="size == 'box' ? 'height : 200px' : 'height : 400px'">
       <img src="../../../../assets/pic/demo.jpeg" width="100%" alt="">
     </div>
     <div class="contentArea px-4 pt-10 text-right">
@@ -33,17 +33,27 @@
 
 <script>
 export default {
-
+  props:{
+    size:{
+      default:'box',
+    }
+  }
 }
 </script>
 
 <style scoped>
+@media (min-width: 200px) and (max-width: 600px) {
+  .imageArea{
+    height: 200px !important;
+  }
+}
 .singleBox{
   border: 1px solid #ededed;
   border-radius: 5px;
+  overflow: hidden;
 }
 .imageArea{
-  height: 200px;
+  /*height: 200px;*/
   overflow: hidden;
 }
 .imageArea img{

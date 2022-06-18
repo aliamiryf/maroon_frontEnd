@@ -39,13 +39,13 @@
       </v-tabs>
       <v-tabs-items v-model="tabs">
         <v-tab-item>
-            مقالات
+            <BoxListArticles class="mt-2" />
         </v-tab-item>
         <v-tab-item>
-          لیست
+            <ListHorizantalCollection/>
         </v-tab-item>
         <v-tab-item>
-          درباره ما
+            <AboutAuthorProfile/>
         </v-tab-item>
       </v-tabs-items>
     </div>
@@ -53,7 +53,11 @@
 </template>
 
 <script>
+import BoxListArticles from "@/components/main/article/collection/list/boxListArticles";
+import ListHorizantalCollection from "@/components/collection/list/listHorizantalCollection";
+import AboutAuthorProfile from "@/components/main/author/aboutAuthorProfile";
 export default {
+  components: {AboutAuthorProfile, ListHorizantalCollection, BoxListArticles},
   data() {
     return {
       headers: [
@@ -67,7 +71,7 @@ export default {
           title: 'درباره‌نویسنده'
         },
       ],
-      tabs: null
+      tabs: 2
     }
   }
 }

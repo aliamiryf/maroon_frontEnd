@@ -164,7 +164,7 @@
 <script>
 import TitleArea from "@/components/indexes/articleView/titleArea";
 import AuthorInfoArticle from "@/components/indexes/articleView/authorInfoArticle";
-import SingleArticleHorizantal from "@/components/main/article/single/singleArticleHorizantal";
+import SingleArticleHorizantal from "@/components/main/article/single/singleArticleHorizontal";
 import ReactionArticle from "@/components/main/vote/reactionArticle";
 import RecommendedByArticle from "@/components/main/article/collection/horizantalList/recommendedByArticle";
 

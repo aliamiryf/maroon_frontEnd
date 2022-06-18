@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-10">
     <SingleArticleTextOnPic :ads="true" style="margin: 0px !important;"/>
   </div>
 </template>
