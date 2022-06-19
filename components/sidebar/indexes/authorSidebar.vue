@@ -4,7 +4,7 @@
       <CategoryAuthor/>
       <NewsletterSidebarAuthor/>
       <FollowByAuthor/>
-      <MainADSSingleAdsTextOnPic class="mt-10"/>
+      <MainADSSingleAdsTextOnPic class="mt-10" v-if="$vuetify.breakpoint.mdAndUp"/>
     </div>
   </div>
 </template>

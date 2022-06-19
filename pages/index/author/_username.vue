@@ -27,8 +27,8 @@
             <v-icon small>mdi-bell</v-icon>
           </v-btn>
         </div>
+        <NewsletterSidebarAuthor v-if="$vuetify.breakpoint.smAndDown" class="mt-5"/>
       </div>
-
       <v-tabs v-model="tabs" color="brand" class="mt-5">
         <v-tabs-slider color="brand"></v-tabs-slider>
         <v-tab v-for="(item , i ) in headers">
@@ -56,8 +56,9 @@
 import BoxListArticles from "@/components/main/article/collection/list/boxListArticles";
 import ListHorizantalCollection from "@/components/collection/list/listHorizantalCollection";
 import AboutAuthorProfile from "@/components/main/author/aboutAuthorProfile";
+import NewsletterSidebarAuthor from "@/components/main/newsletter/newsletterSidebarAuthor";
 export default {
-  components: {AboutAuthorProfile, ListHorizantalCollection, BoxListArticles},
+  components: {NewsletterSidebarAuthor, AboutAuthorProfile, ListHorizantalCollection, BoxListArticles},
   data() {
     return {
       headers: [
@@ -71,7 +72,7 @@ export default {
           title: 'درباره‌نویسنده'
         },
       ],
-      tabs: 2
+      tabs: 0
     }
   }
 }
