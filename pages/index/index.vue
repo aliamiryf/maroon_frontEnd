@@ -16,6 +16,7 @@
        <br>
       <AboutUsSummary class="mt-10"/>
       <CourseSection class="mt-15"/>
+      <PopluarAuthor/>
       <br>
       <br>
   </div>
@@ -31,8 +32,10 @@ import AboutUsSummary from "@/components/indexes/aboutUsSummary";
 import CourseSection from "@/components/indexes/index/courseSection";
 import NewsletterIndex from "@/components/main/newsletter/newsletterIndex";
 import Indexfooter from "@/components/main/footer/indexfooter";
+import PopluarAuthor from "@/components/indexes/index/popluarAuthor";
 export default {
   components: {
+    PopluarAuthor,
     Indexfooter,
     NewsletterIndex,
     CourseSection,

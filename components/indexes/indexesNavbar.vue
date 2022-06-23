@@ -1,6 +1,30 @@
 <template>
   <div>
     <v-container>
+      <v-dialog v-model="searchDialog" fullscreen   transition="dialog-bottom-transition">
+        <v-card color="white" class="fill-height">
+          <div class=" fill-height d-flex justify-space-around flex-column text-center searchArea">
+            <div class="closeBtn">
+              <v-icon @click="searchDialog = !searchDialog">
+                mdi-close
+              </v-icon>
+            </div>
+            <div class="text-center">
+              <div class="searchAreaBox">
+                <v-text-field label="جست‌و‌جو" color="brand">
+                  <template v-slot:append>
+                   <v-btn text color="brand">
+                     <v-icon>
+                       mdi-magnify
+                     </v-icon>
+                   </v-btn>
+                  </template>
+                </v-text-field>
+              </div>
+            </div>
+          </div>
+        </v-card>
+      </v-dialog>
       <v-app-bar color="white" elevation="0" class="elevation-0" style="box-shadow: none !important;">
         <NavbarLogo :width="100" class="mt-3"/>
         <v-spacer></v-spacer>
@@ -51,6 +75,11 @@
               </v-list-item>
             </v-list-item-group>
           </v-list>
+          <v-btn text class="ml-2 " small @click="searchDialog = !searchDialog">
+            <v-icon >
+              mdi-magnify
+            </v-icon>
+          </v-btn>
           <v-btn color="red" class="white--text font-weight-bold mainShadow">
             ثبت‌نام
           </v-btn>
@@ -81,9 +110,6 @@
             </template>
             <v-list-group v-else style="margin-right: -12px;width: 100%" append-icon="" class="menuItem">
               <template v-slot:activator class="menuItem" >
-<!--                <v-list-item-content>-->
-<!--                  <v-list-item-title>{{item.title}}</v-list-item-title>-->
-<!--                </v-list-item-content>-->
                 {{item.title}}
               </template>
               <v-list-item
@@ -95,6 +121,12 @@
                 </v-list-item-title>
               </v-list-item>
             </v-list-group>
+          </v-list-item>
+          <v-list-item @click="searchDialog = !searchDialog">
+            جست‌وجو
+            <v-icon class="mr-2">
+              mdi-magnify
+            </v-icon>
           </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -140,13 +172,19 @@ export default {
         {
           title: "تماس‌ باما"
         },
-      ]
+      ],
+      searchDialog:false,
     }
   }
 }
 </script>
 
 <style scoped>
+@media (min-width: 200px ) and (max-width: 600px) {
+  .searchAreaBox{
+    padding: 0px 10% 0px 10% !important;
+  }
+}
 .menuItem:hover {
   color: #f13b3b !important;
   transition: all 0.3s;
@@ -168,5 +206,16 @@ export default {
 
 .menuItem-dropdown .subTitleDropDown {
   font-size: 10px;
+}
+.searchAreaBox{
+  padding: 0px 40% 0px 40%;
+}
+.searchArea{
+  position: relative;
+}
+.closeBtn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 </style>

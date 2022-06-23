@@ -1,20 +1,23 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
+    <template v-if="error.statusCode === 404">
+      <NotFound/>
+    </template>
     <h1 v-else>
       {{ otherError }}
+      <NuxtLink to="/">
+        Home page
+      </NuxtLink>
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+
   </v-app>
 </template>
 
 <script>
+import NotFound from "@/components/error/notFound";
 export default {
   name: 'EmptyLayout',
+  components: {NotFound},
   layout: 'empty',
   props: {
     error: {

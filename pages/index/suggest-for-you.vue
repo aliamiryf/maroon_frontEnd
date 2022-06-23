@@ -19,7 +19,9 @@
                   آماده کرده‌ایم. فعالیت بیشتر شما در نارون باعث جمع‌آوری اطلاعات بیشری از شما شده و به ما کمک می‌کند تا
                   محتواهای مناسب تری برای شما انتخاب کنیم
                 </p>
-                <v-btn color="brand" class="white--text mainShadow">همه مقالات</v-btn>
+                <div :class="$vuetify.breakpoint.smAndDown ? 'text-center' : ''">
+                  <v-btn color="brand" class="white--text mainShadow">همه مقالات</v-btn>
+                </div>
               </div>
             </div>
           </v-col>
@@ -56,7 +58,7 @@
           <v-col cols="12" lg="9">
             <v-row>
               <v-col cols="12" lg="4" v-for="n in 6">
-                <SignleCategory/>
+                <SingleCategory/>
               </v-col>
             </v-row>
           </v-col>
@@ -104,21 +106,35 @@
 
 <script>
 import SingleArticleBox from "@/components/main/article/single/singleArticleBox";
-import SignleCategory from "@/components/main/category/signleCategory";
 import SingleAuthor from "@/components/main/author/singleAuthor";
+import SingleCategory from "@/components/main/category/singleCategory";
 
 export default {
-  components: {SingleAuthor, SignleCategory, SingleArticleBox}
+  components: {SingleCategory, SingleAuthor, SingleArticleBox}
 }
 </script>
 
 <style scoped>
+@media (min-width: 200px) and (max-width: 600px) {
+  .content p {
+    padding: 10px 35px 10px 35px !important;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 14pt !important;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
 .content p {
   line-height: 25pt;
   padding-left: 110px;
   margin-top: 10px;
 }
-.categoryForYou{
+
+.categoryForYou {
   margin-top: 120px;
 }
 </style>

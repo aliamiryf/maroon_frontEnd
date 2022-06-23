@@ -3,7 +3,7 @@
     <v-container>
       <v-row class="mt-10">
         <v-col cols="12" lg="4" v-for="n in 9">
-          <SignleCategory/>
+          <SingleCategory/>
         </v-col>
       </v-row>
     </v-container>
@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import SignleCategory from "@/components/main/category/signleCategory";
+import SingleCategory from "@/components/main/category/singleCategory";
 export default {
-  components: {SignleCategory}
+  components: {SingleCategory}
 }
 </script>
 
