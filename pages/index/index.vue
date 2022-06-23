@@ -1,24 +1,24 @@
 <template>
   <div>
-      <HeroHeader/>
-      <LastArticleSliderIndex/>
-      <v-container class="mt-15 mb-15">
-        <v-row>
-          <v-col cols="12" lg="8">
-            <PopularAndForYouITabIndex/>
-          </v-col>
-          <v-col cols="12" lg="4">
-            <IndexSidebar/>
-          </v-col>
-        </v-row>
-      </v-container>
-      <br>
-       <br>
-      <AboutUsSummary class="mt-10"/>
-      <CourseSection class="mt-15"/>
-      <PopluarAuthor/>
-      <br>
-      <br>
+    <HeroHeader/>
+    <LastArticleSliderIndex/>
+    <v-container class="mt-15 mb-15">
+      <v-row>
+        <v-col cols="12" lg="8">
+          <PopularAndForYouITabIndex/>
+        </v-col>
+        <v-col cols="12" lg="4">
+          <IndexSidebar/>
+        </v-col>
+      </v-row>
+    </v-container>
+    <br>
+    <br>
+    <AboutUsSummary class="mt-10"/>
+    <CourseSection class="mt-15"/>
+    <PopluarAuthor/>
+    <br>
+    <br>
   </div>
 </template>
 
@@ -33,13 +33,28 @@ import CourseSection from "@/components/indexes/index/courseSection";
 import NewsletterIndex from "@/components/main/newsletter/newsletterIndex";
 import Indexfooter from "@/components/main/footer/indexfooter";
 import PopluarAuthor from "@/components/indexes/index/popluarAuthor";
+
 export default {
   components: {
     PopluarAuthor,
     Indexfooter,
     NewsletterIndex,
     CourseSection,
-    AboutUsSummary, IndexSidebar, PopularAndForYouITabIndex, LastArticleSliderIndex, HeroHeader}
+    AboutUsSummary, IndexSidebar, PopularAndForYouITabIndex, LastArticleSliderIndex, HeroHeader
+  },
+  mounted() {
+    this.$requestHandler({
+      key:'article',
+      name:'getArticle',
+      uslParams:{
+        articleId:'2',
+        testId:'4'
+      },
+      header:{
+        testing:'test'
+      }
+    })
+  }
 }
 </script>
 
