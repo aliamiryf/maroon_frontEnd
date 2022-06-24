@@ -1,9 +1,5 @@
 <template>
-  <div class="">
-    <v-app class="">
-      <Nuxt/>
-    </v-app>
-  </div>
+
 </template>
 
 <script>

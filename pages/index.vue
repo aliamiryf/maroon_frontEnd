@@ -15,9 +15,8 @@ import IndexesNavbar from "@/components/indexes/indexesNavbar";
 import Indexfooter from "@/components/main/footer/indexfooter";
 import BottomNavigationMenu from "@/components/indexes/index/bottomNavigationMenu";
 import NewsletterIndex from "@/components/main/newsletter/newsletterIndex";
-
 export default {
-  layout: 'mainLayout',
+  // layout: 'mainLayout',
   components: {NewsletterIndex, BottomNavigationMenu, Indexfooter, IndexesNavbar},
   data(){
     return{
