@@ -45,13 +45,12 @@ export default {
   mounted() {
     this.$requestHandler({
       key:'article',
-      name:'getArticle',
-      uslParams:{
-        articleId:'2',
-        testId:'4'
-      },
+      name:'createArticle',
       header:{
-        testing:'test'
+        here:'here'
+      },
+      payload:{
+        name:'ali',
       }
     })
   }

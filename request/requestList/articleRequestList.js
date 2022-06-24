@@ -1,13 +1,22 @@
 let prefix = '/article/'
 export const articleReques = [
   {
-    name:'allArticle',
-    url:prefix + 'all',
-    method:'get'
+    name:'createArticle',
+    url:prefix + 'create',
+    method:'post',
+    defaultHeaders: {
+      where:'createArticle',
+    },
+    defaultPayload : {
+      time:11,
+    }
   },
   {
     name:'getArticle',
-    url:prefix + ':articleId/:testId',
-    method:'get'
+    url:prefix + ':articleId',
+    method:'get',
+    defaultHeaders:{
+      time:'here'
+    }
   }
 ]

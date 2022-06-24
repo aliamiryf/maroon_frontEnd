@@ -8,7 +8,10 @@ export default ({$ajaxPost, $ajaxGet}, inject) => {
     if (val.uslParams && Object.keys(val.uslParams) !== 0) {
       url = prepareUrl(request.url, val.uslParams)
     }
-    console.log(url)
+    let requestMethod = requesting[request.method]
+    let headers = prepareRequestDetails('header',request.defaultHeaders , val.header)
+    let payload = prepareRequestDetails('payload',request.defaultPayload , val.payload)
+    return requestMethod(url,headers,payload  )
   })
 
   function prepareUrl(url, urlParams) {
@@ -19,5 +22,27 @@ export default ({$ajaxPost, $ajaxGet}, inject) => {
       finalUrl =  finalUrl.replace(`:${item}`,urlParams[item])
     })
     return finalUrl
+  }
+
+  function prepareRequestDetails(type , defaultDetails , details){
+    let finaleDetails = details
+    if (defaultDetails){
+      Object.assign(finaleDetails , defaultDetails)
+    }
+    return finaleDetails
+  }
+
+
+  let requesting = {
+    get : function (url,headers,payload = null){
+      return $ajaxGet(url,headers).then((resp)=>{
+        return resp;
+      })
+    },
+    post : function (url,headers,payload){
+      return $ajaxPost(url,headers,payload).then((resp)=>{
+        return resp;
+      })
+    }
   }
 }
