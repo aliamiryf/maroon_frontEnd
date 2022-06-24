@@ -46,6 +46,9 @@ export default {
     baseURL:process.env.BASE_URL || 'http://localhost:8002',
   },
 
+  env: {
+    production:false
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

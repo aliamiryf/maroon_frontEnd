@@ -11,6 +11,7 @@ import Router from "vue-router";
 import Vue from "vue";
 import * as Sentry from "@sentry/vue";
 import { BrowserTracing } from "@sentry/tracing";
+import globalMixins from "@/mixins/globalMixins";
 
 const router = new Router({
   mode: 'history',
@@ -27,9 +28,14 @@ Sentry.init({
   ],
   tracesSampleRate: 1.0,
 });
+Vue.mixin(globalMixins)
+
+Vue.use(require('vue-cookies'))
 
 export default {
+  mounted() {
 
+  }
 }
 </script>
 
