@@ -4,14 +4,18 @@ import * as url from "url";
 export default ({$ajaxPost, $ajaxGet}, inject) => {
   inject('requestHandler', (val) => {
     let request = requestList[val.key].find(item => item.name === val.name)
-    let url = request.url
-    if (val.uslParams && Object.keys(val.uslParams) !== 0) {
-      url = prepareUrl(request.url, val.uslParams)
+    if (request){
+      let url = request.url
+      if (url){
+        if (val.uslParams && Object.keys(val.uslParams) !== 0) {
+          url = prepareUrl(request.url, val.uslParams)
+          let requestMethod = requesting[request.method]
+          let headers = prepareRequestDetails('header',request.defaultHeaders , val.header)
+          let payload = prepareRequestDetails('payload',request.defaultPayload , val.payload)
+          return requestMethod(url,headers,payload  )
+        }
+      }
     }
-    let requestMethod = requesting[request.method]
-    let headers = prepareRequestDetails('header',request.defaultHeaders , val.header)
-    let payload = prepareRequestDetails('payload',request.defaultPayload , val.payload)
-    return requestMethod(url,headers,payload  )
   })
 
   function prepareUrl(url, urlParams) {

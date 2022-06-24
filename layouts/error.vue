@@ -15,6 +15,8 @@
 
 <script>
 import NotFound from "@/components/error/notFound";
+
+
 export default {
   name: 'EmptyLayout',
   components: {NotFound},
